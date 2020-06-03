@@ -1,0 +1,112 @@
+﻿/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+import java.util.Scanner;
+
+public class Main
+{
+  public static void main (String[]args)
+  {
+    String ad;
+    String soyad;
+    
+     Scanner scn = new Scanner (System.in);
+
+    System.out.println ("isim giriniz...");
+    ad = scn.nextLine ();
+    
+    System.out.println ("Soyadınızı giriniz...");
+    soyad = scn.nextLine ();
+    //Adın ve soyadın 12 nin katı olup olmadığı kontrol eder.
+    if (ad.length() % 12 != 0 && soyad.length() % 12 != 0){
+        
+    int adYildiz = 0;
+    //12 nin katı olması için fark kadar yıldız eklenir.
+    adYildiz = 12 - ad.length ();
+    for (int i = 0; i < adYildiz; i++){
+    	ad = ad + "*";
+    }
+    System.out.println ("Yeni isim = " + ad);
+    
+    int soyadArtı = 12 - soyad.length();
+    for (int i = 0; i < soyadArtı; i++){
+	   soyad = soyad + "+";
+    }
+    System.out.println ("Yeni soyisim = " + soyad);
+    } 
+   
+ /*  * * *
+     *   *
+     *   *
+     * * *    Kare oluşturmak istediğimden 4 e bölüyorum.*/
+    int i = 0; // İndexin artışını sağlamak için bir değişken oluşturuldu.
+    int adSınır = ad.length() / 4;
+    
+    //Üst kısımın yazılmasını sağlar.
+    for (i = 0; i < adSınır; i++){
+        //Yan yana yazmak istediğimden print()  kullanarak yazdırıldı.
+	   System.out.print (ad.charAt (i));
+    }
+    //Alt satıra geç.
+    System.out.print ("\n");
+    
+    //orta kısmın yazılmasını sağlar.
+    for (int k = 0; k < adSınır; k++)
+    {
+	System.out.print (ad.charAt (i++));
+	for (int m = 0; m < adSınır - 2; m++)
+	{
+	    System.out.print (" ");
+	  }
+	  
+	System.out.print (ad.charAt (i++));
+	System.out.print ("\n");
+    }
+    
+    // Alt satırın yazılmasını sağlar.
+    for (int j = 0; j < adSınır; j++)
+    {
+	System.out.print (ad.charAt (i++));
+    }
+      
+	System.out.print ("\n\n");
+	
+    int soyadSınır = soyad.length() / 3;
+    //soyadın uzunluğu 12 ve 12 nin katı olduğundan 3 bölerek 
+    /*  *     *
+        *     *
+        *     *
+        *     *
+        * * * *    4 sol uzun kenar,4 sağ uzun kenar ve 4 alt kenar oluşturuldu.*/
+    
+    int b = 0;
+    //Ayrı bir değer oluşturarak, indexlerin arttırılması sağlandı.
+    for( int s = 0; s < soyadSınır; s++){
+        
+        System.out.print(soyad.charAt(b++));
+        for (int d = 0; d< soyadSınır - 2 ; d++ ){
+        	System.out.print (" ");
+          } 
+       
+          System.out.print(soyad.charAt(b++));
+          //Yukarıdaki işlemler sırasıyla soyadın bir harfinin yazılmasını sağlar sonrrasında boşluk ve sonraki index yani
+          //şeklinde devam eder.
+          
+          System.out.print("\n");
+          
+          //Alt satıra geçmesini sağlar.
+
+      }
+      
+   //Alt satırın yazılmasını sağlar.
+      for (int m = 0; m <soyadSınır ; m++ ){
+        System.out.print(soyad.charAt(b++));
+
+      } 
+  }
+}
